@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterproject/new_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -128,33 +129,49 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(Colors.pink),
+
+                    ),
                       onPressed: ()=>_incrementCounter(),
                     child: Icon(Icons.add),
                   ),
-                  SizedBox(width: 7,),
+                  //SizedBox(width: 7,),
 
-                  ElevatedButton(
-                    onPressed: () => _resetCounter(),
-                    child: Icon(Icons.start),
-                  ),
-                  SizedBox(width: 7,),
+                  //ElevatedButton(
 
-                  ElevatedButton(
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
+                    //onPressed: () => _resetCounter(),
+                    //child: Icon(Icons.start),
+                  //),
+                  //SizedBox(width: 7,),
 
-                    ),
-                    onPressed: () => _decrementCounter(),
-                    child: Icon(Icons.remove, color: Colors.blue,),
+                  //ElevatedButton(
+                    //style: ButtonStyle(
+                      //backgroundColor: MaterialStateProperty.all<Color>(Colors.redAccent),
+
+                   // ),
+                    //onPressed: () => _decrementCounter(),
+                    //child: Icon(Icons.remove, color: Colors.blue,),
 
 
 
-                  ),
-                  SizedBox(width: 7,),
+                  //),
+                  //SizedBox(width: 7,),
 
                 ],
               ),
+            SizedBox(height: 50,),
+            ElevatedButton(
+              onPressed: () {
+                // Navigation vers la nouvelle page
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => MyNewPage(),
+                ));
 
+              },
+              child: Icon(Icons.arrow_forward),
+
+            ),
 
 
 
